@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.css";
 import { Inter } from "next/font/google";
+import ErrorBoundary from "./components/shared/ErrorBoundary";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
@@ -36,7 +37,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}
       >
         <Header />
-        <main>{children}</main>
+        <main>
+          <ErrorBoundary>{children}</ErrorBoundary>
+        </main>
         <Footer />
       </body>
     </html>
