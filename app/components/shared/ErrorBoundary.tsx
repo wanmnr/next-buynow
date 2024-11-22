@@ -25,6 +25,10 @@ export default class ErrorBoundary extends Component<Props, State> {
     console.error("Uncaught error:", error, errorInfo);
   }
 
+  private readonly handleReset = () => {
+    this.setState({ hasError: false });
+  };
+
   public render() {
     if (this.state.hasError) {
       return (
@@ -38,7 +42,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             )}
             <button
               className="bg-blue-600 text-white px-6 py-3 rounded-lg"
-              onClick={() => this.setState({ hasError: false })}
+              onClick={this.handleReset}
             >
               Try again
             </button>
