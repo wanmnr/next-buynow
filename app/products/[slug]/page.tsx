@@ -17,9 +17,14 @@ export default async function ProductPage({
     notFound();
   }
 
+  const productImages = product.images.map((url) => ({
+    id: url,
+    url: url,
+  }));
+
   return (
     <div className="container mx-auto px-4 py-8">
-      <ProductGallery images={product.images} />
+      <ProductGallery images={productImages} />
       <ProductDetail product={product} />
       <ProductFeatures features={product.features} />
       <ProductSpecifications specifications={product.specifications} />
