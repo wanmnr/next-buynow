@@ -14,6 +14,11 @@ interface ProductGalleryProps {
 export default function ProductGallery({ images }: ProductGalleryProps) {
   const [selectedImageId, setSelectedImageId] = useState(images[0]?.id || "");
 
+  // Handle the click event inside the component
+  const handleImageSelect = (imageId: string) => {
+    setSelectedImageId(imageId);
+  };
+
   return (
     <div className="mb-8">
       <div className="relative aspect-video bg-gray-100 mb-4 rounded-lg overflow-hidden">
@@ -27,7 +32,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
             className={`aspect-video bg-gray-100 rounded-lg overflow-hidden ${
               selectedImageId === image.id ? "ring-2 ring-blue-600" : ""
             }`}
-            onClick={() => setSelectedImageId(image.id)}
+            onClick={() => handleImageSelect(image.id)}
           >
             {/* Thumbnail placeholder - in real app, use next/image */}
             <div className="w-full h-full bg-gray-200" />
