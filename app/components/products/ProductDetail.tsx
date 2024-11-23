@@ -1,4 +1,5 @@
 // components/products/ProductDetail.tsx
+"use client";
 import { Product } from "../../types/product";
 import Button from "../shared/Button";
 
@@ -7,6 +8,10 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({ product }: ProductDetailProps) {
+  const handleAddToCart = () => {
+    /* Add to cart logic */
+  };
+
   return (
     <div className="py-8">
       <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
@@ -25,9 +30,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
       <p className="text-gray-600 mb-8">{product.description}</p>
       <Button
         disabled={product.stock === 0}
-        onClick={() => {
-          /* Add to cart logic */
-        }}
+        onClick={handleAddToCart}
         className="w-full md:w-auto"
       >
         {product.stock > 0 ? "Add to Cart" : "Out of Stock"}
