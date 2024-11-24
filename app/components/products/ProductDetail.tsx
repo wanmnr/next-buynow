@@ -1,5 +1,7 @@
 // components/products/ProductDetail.tsx
 "use client";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Product } from "../../types/product";
 import Button from "../shared/Button";
 
@@ -8,8 +10,51 @@ interface ProductDetailProps {
 }
 
 export default function ProductDetail({ product }: ProductDetailProps) {
-  const handleAddToCart = () => {
-    /* Add to cart logic */
+  const router = useRouter();
+  const [addingToCart, setAddingToCart] = useState(false);
+
+  const handleAddToCart = async () => {
+    try {
+      setAddingToCart(true);
+      // Get existing cart from localStorage
+      const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+      // Check if product already exists in cart
+      const existingProductIndex = existingCart.findIndex(
+        (item: Product) => item.id === product.id
+      );
+
+      if (existingProductIndex >= 0) {
+        // Update quantity if product exists
+        existingCart[existingProductIndex].quantity =
+          (existingCart[existingProductIndex].quantity || 1) + 1;
+      } else {
+        // Add new product if it doesn't exist
+        existingCart.push({ ...product, quantity: 1 });
+      }
+
+      // Save updated cart
+      localStorage.setItem("cart", JSON.stringify(existingCart));
+
+      // You can add a toast notification here
+      alert("Product added to cart successfully!");
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+      alert("Failed to add product to cart");
+    } finally {
+      setAddingToCart(false);
+    }
+  };
+
+  const handleBuyNow = () => {
+    // You can use various methods to pass product data to checkout:
+    // 1. URL parameters
+    // 2. Local Storage
+    // 3. State Management (Redux, Zustand, etc.)
+
+    // For this example, we'll use localStorage
+    localStorage.setItem("checkoutProduct", JSON.stringify(product));
+    router.push("/checkout");
   };
 
   return (
@@ -28,13 +73,22 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         </span>
       </div>
       <p className="text-gray-600 mb-8">{product.description}</p>
-      <Button
-        disabled={product.stock === 0}
-        onClick={handleAddToCart}
-        className="w-full md:w-auto"
-      >
-        {product.stock > 0 ? "Add to Cart" : "Out of Stock"}
-      </Button>
+      <div className="flex gap-4">
+        <Button
+          disabled={product.stock === 0 || addingToCart}
+          onClick={handleAddToCart}
+          className="w-full md:w-auto bg-gray-600 hover:bg-gray-700"
+        >
+          {addingToCart ? "Adding..." : "Add to Cart"}
+        </Button>
+        <Button
+          disabled={product.stock === 0}
+          onClick={handleBuyNow}
+          className="w-full md:w-auto bg-indigo-600 hover:bg-indigo-700"
+        >
+          Buy Now
+        </Button>
+      </div>
     </div>
   );
 }
