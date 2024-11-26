@@ -17,7 +17,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
     try {
       setAddingToCart(true);
       // Get existing cart from localStorage
-      const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
+      const existingCart = JSON.parse(localStorage.getItem("cart") ?? "[]");
 
       // Check if product already exists in cart
       const existingProductIndex = existingCart.findIndex(
