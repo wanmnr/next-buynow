@@ -1,4 +1,24 @@
 // types/order.ts
+export interface OrderFormData {
+  customerInfo: {
+    name: string;
+    email: string;
+    phone: string;
+    address: {
+      street: string;
+      city: string;
+      state: string;
+      zipCode: string;
+      country: string;
+    };
+  };
+  items: {
+    productId: string;
+    quantity: number;
+    price: number;
+  }[];
+}
+
 export interface OrderItem {
     productId: string;
     quantity: number;
