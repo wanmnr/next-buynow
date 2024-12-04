@@ -1,10 +1,10 @@
 // app/products/[slug]/page.tsx
 import { notFound } from "next/navigation";
 import { getProductBySlug } from "../../lib/products";
-import ProductDetail from "../../components/products/ProductDetail";
-import ProductFeatures from "../../components/products/ProductFeatures";
-import ProductGallery from "../../components/products/ProductGallery";
-import ProductSpecifications from "../../components/products/ProductSpecifications";
+import ProductDetail from "./components/ProductDetail";
+import ProductFeatures from "./components/ProductFeatures";
+import ProductGallery from "./components/ProductGallery";
+import ProductSpecifications from "./components/ProductSpecifications";
 
 export default async function ProductPage({
   params,
