@@ -2,8 +2,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Product } from "../../types/product";
-import Button from "../shared/Button";
+import { Product } from "../../../types/product";
+import Button from "../../../components/shared/Button";
 
 interface ProductDetailProps {
   readonly product: Product;
