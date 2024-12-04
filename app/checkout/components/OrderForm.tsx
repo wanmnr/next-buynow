@@ -1,4 +1,4 @@
-// app/components/checkout/OrderForm.tsx
+// app/checkout/components/OrderForm.tsx
 "use client";
 import { useState, useEffect } from "react";
 import { Product } from "../../types/product";
