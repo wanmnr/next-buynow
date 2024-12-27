@@ -24,7 +24,7 @@ export interface Product {
   rating: number
   reviews: number
   features: string[]
-  specifications: Record<string, string>
+  specifications: ProductSpecifications
   images: string[]
   category: string
   tags: string[]
@@ -39,4 +39,14 @@ export interface ProductFilter {
   inStock?: boolean
   sortBy?: 'price' | 'rating' | 'newest'
   sortOrder?: 'asc' | 'desc'
+}
+
+export interface ProductSpecifications {
+  brand: string;
+  model: string;
+  connectivity?: string;
+  weight?: string;
+  warranty: string;
+  battery?: string;
+  display?: string;
 }
