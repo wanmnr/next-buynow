@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": "prod_001",
+      "slug": "premium-wireless-headphones",
+      "name": "Premium Wireless Headphones",
+      "description": "High-quality wireless headphones with noise cancellation technology",
+      "price": 299.99,
+      "category": "Electronics",
+      "features": [
+        "Active Noise Cancellation",
+        "40-hour battery life",
+        "Premium sound quality",
+        "Comfortable fit"
+      ],
+      "specifications": {
+        "brand": "AudioTech",
+        "model": "WH-2000",
+        "connectivity": "Bluetooth 5.0",
+        "weight": "250g",
+        "warranty": "2 years"
+      },
+      "images": [
+        "/images/products/headphones-main.jpg",
+        "/images/products/headphones-angle.jpg",
+        "/images/products/headphones-case.jpg"
+      ],
+      "stock": 50,
+      "rating": 4.8,
+      "reviews": 245,
+      "tags": ["headphones", "wireless", "audio", "electronics"],
+      "createdAt": "2024-01-01T00:00:00.000Z",
+      "updatedAt": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "prod_002",
+      "slug": "smart-fitness-watch",
+      "name": "Smart Fitness Watch",
+      "description": "Advanced fitness tracking with health monitoring features",
+      "price": 199.99,
+      "category": "Electronics",
+      "features": [
+        "Heart rate monitoring",
+        "Sleep tracking",
+        "GPS tracking",
+        "Water resistant"
+      ],
+      "specifications": {
+        "brand": "FitTech",
+        "model": "FT-100",
+        "battery": "7 days",
+        "display": "AMOLED",
+        "warranty": "1 year"
+      },
+      "images": [
+        "/images/products/watch-main.jpg",
+        "/images/products/watch-side.jpg",
+        "/images/products/watch-band.jpg"
+      ],
+      "stock": 75,
+      "rating": 4.6,
+      "reviews": 182,
+      "tags": ["smartwatch", "fitness", "wearable", "electronics"],
+      "createdAt": "2024-01-02T00:00:00.000Z",
+      "updatedAt": "2024-01-02T00:00:00.000Z"
+    }
+  ]
+}
