@@ -1,0 +1,283 @@
+---
+title: "Container"
+description: "A flexible container component that provides consistent horizontal padding and centered content"
+---
+
+import { Callout } from "nextra-theme-docs";
+import { Tab, Tabs } from "nextra-theme-docs";
+
+# Container Component
+
+A flexible container component that provides consistent horizontal padding and centered content with a maximum width. This component is built with Tailwind CSS and is fully responsive across all screen sizes.
+
+## Installation
+
+Add the Container component to your shared components:
+
+// components/shared/Container.tsx
+interface ContainerProps {
+readonly children: React.ReactNode;
+readonly className?: string;
+}
+
+export default function Container({
+  children,
+  className = "",
+}: ContainerProps) {
+  return (
+    <div className={`container mx-auto px-4 ${className}`}>{children}</div>
+  );
+}
+
+## Import
+
+import Container from "@/components/shared/Container";
+
+## Basic Usage
+
+<Tabs items={['Example', 'Code']}>
+  <Tab>
+    <Container>
+      <h1>My Content</h1>
+      <p>This will be centered with padding.</p>
+    </Container>
+  </Tab>
+  <Tab>
+    function Demo() {
+      return (
+        <Container>
+          <div className="border-2 border-dashed border-gray-300 p-4">
+            <h1 className="text-2xl font-bold">My Content</h1>
+            <p>This will be centered with padding.</p>
+          </div>
+        </Container>
+      );
+    }
+  </Tab>
+</Tabs>
+
+## API Reference
+
+### Props
+
+| Prop      | Type            | Required | Default | Description                                 |
+| --------- | --------------- | -------- | ------- | ------------------------------------------- |
+| children  | React.ReactNode | Yes      | -       | Content to be rendered inside the container |
+| className | string          | No       | ""      | Additional CSS classes to apply             |
+
+### TypeScript
+
+interface ContainerProps {
+readonly children: React.ReactNode;
+readonly className?: string;
+}
+
+## Usage Guidelines
+
+### Best Practices
+
+<Callout type="info">
+  The Container component is designed to provide consistent spacing and width
+  constraints for your content. Here are some recommended practices:
+</Callout>
+
+#### Do's ✅
+
+- Use for main content sections that need consistent width/padding
+- Nest containers to create layout hierarchies
+- Add custom classes via className prop for specific styling needs
+
+// Good - Basic usage
+
+<Container>
+  <main>Content here</main>
+</Container>
+
+// Good - With custom classes
+
+<Container className="bg-gray-100 py-8">
+  <section>Content with background</section>
+</Container>
+
+#### Don'ts ❌
+
+<Callout type="warning">
+  Avoid these common mistakes when using the Container component:
+</Callout>
+
+- Avoid nesting containers unnecessarily
+- Don't use for full-width backgrounds/sections
+
+// Bad - Unnecessary nesting
+
+<Container>
+  <Container>
+    <div>Content</div>
+  </Container>
+</Container>
+
+// Bad - Full-width section
+
+<Container className="bg-blue-500 w-screen">
+  <div>This defeats the container purpose</div>
+</Container>
+
+## Examples
+
+### Page Layout
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    A basic page layout with a container.
+  </Tab>
+  <Tab>
+    import Container from '@/components/shared/Container';
+
+    export default function HomePage() {
+      return (
+        <main>
+          <Container>
+            <h1 className="text-4xl font-bold">Welcome</h1>
+            <p className="mt-4">Main content goes here...</p>
+          </Container>
+        </main>
+      );
+    }
+
+  </Tab>
+</Tabs>
+
+### Article Layout with Sections
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    An article layout combining full-width and contained sections.
+  </Tab>
+  <Tab>
+    import Container from '@/components/shared/Container';
+
+    export default function BlogPost() {
+      return (
+        <article>
+          {/* Hero section without container for full-width background */}
+          <div className="bg-gray-100 py-12">
+            <Container className="text-center">
+              <h1 className="text-3xl">Blog Post Title</h1>
+            </Container>
+          </div>
+
+          {/* Main content with container */}
+          <Container className="py-8">
+            <div className="prose lg:prose-xl">
+              <p>Article content...</p>
+            </div>
+          </Container>
+        </article>
+      );
+    }
+
+  </Tab>
+</Tabs>
+
+### Form Section
+
+<Tabs items={['Preview', 'Code']}>
+  <Tab>
+    A form layout using a container with maximum width constraint.
+  </Tab>
+  <Tab>
+    import Container from '@/components/shared/Container';
+
+    export default function ContactForm() {
+      return (
+        <Container className="max-w-2xl my-8">
+          <form className="space-y-4">
+            <div>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                className="w-full border rounded px-3 py-2"
+              />
+            </div>
+            <button type="submit" className="bg-blue-500 text-white px-4 py-2">
+              Submit
+            </button>
+          </form>
+        </Container>
+      );
+    }
+
+  </Tab>
+</Tabs>
+
+## Technical Details
+
+The Container component utilizes Tailwind CSS classes for its core functionality:
+
+- `container`: Sets a responsive max-width
+- `mx-auto`: Centers the container horizontally
+- `px-4`: Adds consistent horizontal padding
+
+### Default Breakpoints
+
+The container responds to these Tailwind breakpoints:
+
+| Breakpoint | Width  |
+| ---------- | ------ |
+| sm         | 640px  |
+| md         | 768px  |
+| lg         | 1024px |
+| xl         | 1280px |
+| 2xl        | 1536px |
+
+## Customization
+
+### Custom Widths
+
+You can override the default container width using Tailwind's max-width utilities:
+
+<Container className="max-w-4xl">
+  {/* Content with custom max-width */}
+</Container>
+
+### Custom Padding
+
+Modify the default padding using Tailwind's padding utilities:
+
+<Container className="px-6 md:px-8">
+  {/* Content with custom padding */}
+</Container>
+
+## Accessibility
+
+The Container component is a presentational wrapper and doesn't introduce any accessibility concerns. However, ensure your content within the container follows proper accessibility practices:
+
+- Use proper heading hierarchy
+- Maintain sufficient color contrast
+- Ensure adequate text size and spacing
+- Keep content readable at all screen sizes
+
+## Browser Support
+
+The Container component works in all modern browsers that support:
+
+- CSS Flexbox
+- CSS Grid
+- Modern CSS Box Model
+
+## Contributing
+
+Feel free to contribute to this component by:
+
+1. Opening issues for bugs or suggestions
+2. Creating pull requests with improvements
+3. Adding more examples and use cases
+4. Improving documentation
+
+## Related Components
+
+- Layout
+- Section
+- Grid
+- Box
