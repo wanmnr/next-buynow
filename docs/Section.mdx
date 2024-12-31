@@ -1,0 +1,146 @@
+---
+title: 'Section Component'
+description: 'A flexible container component that provides consistent vertical padding and customizable styling'
+---
+
+import { Section } from '@/components/shared/Section'
+
+# Section Component
+
+The Section component is a fundamental layout building block that wraps content with consistent vertical padding while allowing for customizable styling and identification.
+
+import Section from '@/components/shared/Section'
+
+interface SectionProps {
+  readonly children: React.ReactNode;
+  readonly className?: string;
+  readonly id?: string;
+}
+
+export default function Section({
+  children,
+  className = "",
+  id,
+}: SectionProps) {
+  return (
+    <section id={id} className={`py-20 ${className}`}>
+      {children}
+    </section>
+  );
+}
+
+## Props
+
+| Prop | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| children | React.ReactNode | Yes | - | Content to be rendered inside the section |
+| className | string | No | '' | Additional CSS classes to apply |
+| id | string | No | undefined | HTML id attribute for the section |
+
+## Basic Examples 
+
+Here's a default section with basic content:
+
+export const DefaultExample = () => (
+  <Section>
+    <h1>My Content</h1>
+    <p>This section has default padding and styling</p>
+  </Section>
+)
+
+Here's a section with custom styling:
+
+export const StyledExample = () => (
+  <Section className="bg-gray-100 text-center">
+    <div>Centered section with gray background</div>
+  </Section>
+)
+
+And a section with an ID for navigation:
+
+export const IdExample = () => (
+  <Section id="about">
+    <div>This section can be linked to with #about</div>
+  </Section>
+)
+
+## Usage Guidelines
+
+### Do's
+- Use for major page segments that need consistent spacing
+- Add custom classes for specific styling needs
+- Include ids for navigation purposes
+- Nest other components inside
+
+### Don'ts
+- Don't override the padding classes unless absolutely necessary
+- Avoid empty sections without content
+- Don't use for small UI components that don't need standard spacing
+
+## Real-world Examples
+
+### Landing Page Hero Section
+
+export const HeroExample = () => (
+  <Section className="bg-blue-600 text-white min-h-screen flex items-center">
+    <div className="container mx-auto">
+      <h1 className="text-5xl font-bold">Welcome to Our Platform</h1>
+      <p className="mt-4 text-xl">Discover amazing features and possibilities</p>
+      <button className="mt-8 px-6 py-2 bg-white text-blue-600 rounded">
+        Get Started
+      </button>
+    </div>
+  </Section>
+)
+
+### Features Section
+
+export const FeaturesExample = () => (
+  <Section className="bg-gray-50" id="features">
+    <div className="container mx-auto">
+      <h2 className="text-3xl font-semibold text-center mb-12">
+        Key Features
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="p-6 bg-white rounded-lg shadow">
+          <h3 className="text-xl font-medium">Feature 1</h3>
+          <p className="mt-2">Description goes here</p>
+        </div>
+      </div>
+    </div>
+  </Section>
+)
+
+### Contact Form Section
+
+export const ContactExample = () => (
+  <Section className="bg-white border-t" id="contact">
+    <div className="max-w-2xl mx-auto">
+      <h2 className="text-3xl font-semibold text-center mb-8">
+        Get in Touch
+      </h2>
+      <form className="space-y-6">
+        <div>
+          <label htmlFor="email" className="block text-sm font-medium">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="mt-1 block w-full rounded-md border-gray-300"
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded-md"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </Section>
+)
+
+## Accessibility
+
+The Section component uses the semantic HTML `<section>` element, which helps screen readers understand the document structure. When using the `id` prop, ensure it's unique across the page for proper navigation.
