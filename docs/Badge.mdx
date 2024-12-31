@@ -1,0 +1,52 @@
+// docs/Badge.mdx or similar documentation file
+
+// Basic Usage
+import Badge from '../components/shared/Badge';
+
+// Success Badge
+
+<Badge variant="success">Completed</Badge>
+
+// Warning Badge
+
+<Badge variant="warning">Pending</Badge>
+
+// Error Badge
+
+<Badge variant="error">Failed</Badge>
+
+// Info Badge (default)
+
+<Badge>Information</Badge>
+
+// Usage Guidelines:
+/\*
+
+- Use 'success' variant for positive outcomes or completion states
+- Use 'warning' variant for cautionary or pending states
+- Use 'error' variant for error states or failures
+- Use 'info' variant (default) for general information
+
+Do:
+
+- Keep badge text concise and clear
+- Use consistent terminology across similar states
+- Place badges near related content
+
+Don't:
+
+- Use long sentences within badges
+- Mix different badge variants for the same status type
+  \*/
+
+// Examples in context:
+
+<div>
+  <h3>Order #1234</h3>
+  <Badge variant="success">Delivered</Badge>
+</div>
+
+<div>
+  <h3>Payment Status</h3>
+  <Badge variant="warning">Verification Required</Badge>
+</div>
