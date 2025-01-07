@@ -1,0 +1,60 @@
+{
+  "testimonials": [
+    {
+      "id": "t001",
+      "name": "Abu Bakar",
+      "title": "Pembeli Verified",
+      "image": "/images/testimonials/abu.jpg",
+      "rating": 5,
+      "text": "Alhamdulillah, best sangat shopping kat sini! Barang semua original dan customer service pun sangat helpful. Delivery cepat je sampai KL.",
+      "date": "2024-01-15",
+      "product": "Premium Wireless Headphones"
+    },
+    {
+      "id": "t002",
+      "name": "Siti Aminah",
+      "title": "Pelanggan Setia",
+      "image": "/images/testimonials/siti.jpg",
+      "rating": 5,
+      "text": "Dah setahun lebih saya shopping kat platform ni. Quality terjamin, harga berpatutan, dan shipping pun super fast! Highly recommended untuk semua.",
+      "date": "2024-02-20",
+      "product": "Smart Fitness Watch"
+    },
+    {
+      "id": "t003",
+      "name": "Ah Chong",
+      "title": "Tech Reviewer",
+      "image": "/images/testimonials/ahchong.jpg",
+      "rating": 4,
+      "text": "Really worth it! The gadgets here are genuine and prices are reasonable compared to other platforms. Fast delivery to Penang. Will buy again!",
+      "date": "2024-03-10",
+      "product": "Premium Wireless Headphones"
+    },
+    {
+      "id": "t004",
+      "name": "Muthu Raj",
+      "title": "Verified Buyer",
+      "image": "/images/testimonials/muthu.jpg",
+      "rating": 5,
+      "text": "This platform got very good service. I bought phone case from here, quality is superb and price is cheaper than shopping mall. Delivery to Johor very fast.",
+      "date": "2024-03-15",
+      "product": "Phone Protection Case"
+    },
+    {
+      "id": "t005",
+      "name": "Sarah Tan",
+      "title": "Beauty Influencer",
+      "image": "/images/testimonials/sarah.jpg",
+      "rating": 5,
+      "text": "Seriously amazed with the authenticity of products here! Semua original, harga pun okay je. Customer service responsive gila. Thanks team!",
+      "date": "2024-03-20",
+      "product": "Skincare Set Premium"
+    }
+  ],
+  "stats": {
+    "averageRating": 4.8,
+    "totalReviews": 2500,
+    "verifiedPurchases": 2200,
+    "recommendationRate": 96
+  }
+}
