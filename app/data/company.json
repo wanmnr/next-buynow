@@ -1,0 +1,77 @@
+{
+  "company": {
+    "name": "BuyNow Malaysia",
+    "founded": 2024,
+    "mission": "Menyediakan produk berkualiti tinggi dengan perkhidmatan pelanggan yang cemerlang",
+    "missionEn": "To provide high-quality products with exceptional customer service for all Malaysians",
+    "values": [
+      {
+        "title": "Kualiti Terjamin",
+        "titleEn": "Guaranteed Quality",
+        "description": "Kami sentiasa mengutamakan kualiti produk yang original dan terjamin"
+      },
+      {
+        "title": "Kepuasan Pelanggan",
+        "titleEn": "Customer Satisfaction",
+        "description": "Kegembiraan pelanggan adalah keutamaan kami"
+      },
+      {
+        "title": "Inovasi Digital",
+        "titleEn": "Digital Innovation",
+        "description": "Sentiasa meningkatkan perkhidmatan untuk pengalaman membeli-belah yang lebih baik"
+      }
+    ],
+    "team": [
+      {
+        "name": "Dato' Ahmad Ismail",
+        "position": "CEO",
+        "bio": "20+ tahun pengalaman dalam e-commerce dan retail di Malaysia"
+      },
+      {
+        "name": "Lee Wei Ming",
+        "position": "COO",
+        "bio": "Pakar teknologi dengan pengalaman di Lazada dan Shopee Malaysia"
+      },
+      {
+        "name": "Puan Nurul Huda",
+        "position": "Head of Customer Experience",
+        "bio": "Pengalaman luas dalam pengurusan perhubungan pelanggan"
+      }
+    ],
+    "locations": [
+      {
+        "city": "Kuala Lumpur",
+        "address": "Level 30, Menara BuyNow, KLCC, 50088 Kuala Lumpur",
+        "phone": "+603-2xxx xxxx"
+      },
+      {
+        "city": "Penang",
+        "address": "BuyNow Operations Centre, Bayan Lepas, 11900 Penang",
+        "phone": "+604-6xx xxxx"
+      },
+      {
+        "city": "Johor Bahru",
+        "address": "BuyNow Hub, Taman Mount Austin, 81100 Johor Bahru",
+        "phone": "+607-3xx xxxx"
+      }
+    ],
+    "socialMedia": {
+      "facebook": "https://facebook.com/buynowmy",
+      "twitter": "https://twitter.com/buynowmy",
+      "instagram": "https://instagram.com/buynowmy",
+      "tiktok": "https://tiktok.com/@buynowmy",
+      "telegram": "https://t.me/buynowmy"
+    },
+    "certifications": [
+      "MDEC Digital Business Certification",
+      "SSM Verified Business",
+      "SIRIM Product Quality Certification",
+      "Halal Certification (JAKIM)"
+    ],
+    "customerSupport": {
+      "whatsapp": "+60 1x-xxx xxxx",
+      "email": "support@buynow.my",
+      "operatingHours": "9:00 AM - 10:00 PM (Everyday including Public Holidays)"
+    }
+  }
+}
