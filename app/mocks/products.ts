@@ -18,10 +18,13 @@ export const mockProducts: Product[] = [
       'Built-in microphone',
     ],
     specifications: {
-      'Battery Life': '30 hours',
-      'Charging Time': '2 hours',
-      'Bluetooth Version': '5.0',
-      'Weight': '250g',
+      brand: 'AudioTech',
+      model: 'WH-2000',
+      connectivity: 'Bluetooth 5.0',
+      weight: '250g',
+      warranty: '1 year',
+      battery: '30 hours',
+      display: 'LED indicators'
     },
     images: [
       '/images/products/headphones-1.jpg',
@@ -49,10 +52,13 @@ export const mockProducts: Product[] = [
       'Sleep tracking',
     ],
     specifications: {
-      'Display': '1.4" AMOLED',
-      'Battery Life': '7 days',
-      'Water Resistance': '5 ATM',
-      'Compatibility': 'iOS and Android',
+      brand: 'TechWatch',
+      model: 'SW-100',
+      connectivity: 'Bluetooth 5.0',
+      weight: '45g',
+      warranty: '2 years',
+      battery: '7 days',
+      display: '1.4" AMOLED'
     },
     images: [
       '/images/products/watch-1.jpg',
