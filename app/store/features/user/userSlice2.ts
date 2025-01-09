@@ -32,7 +32,7 @@ const userSlice = createSlice({
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.error.message || 'An error occurred';
       })
       // Register
       .addCase(registerUser.pending, (state) => {
@@ -45,7 +45,7 @@ const userSlice = createSlice({
       })
       .addCase(registerUser.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.error.message || 'An error occurred';
       });
   },
 });
