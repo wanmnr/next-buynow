@@ -1,39 +1,49 @@
 // prisma/schema.prisma
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
 }
 
 model Product {
-  id          String     @id @default(cuid())
-  name        String
-  price       Float
-  stock       Int
-  description String?
-  category    String?
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  CartItem    CartItem[]
+    id             String     @id @default(cuid())
+    name           String
+    slug           String     @unique
+    description    String
+    price          Float
+    stock          Int
+    rating         Float      @default(0)
+    reviews        Int        @default(0)
+    category       String
+    features       Json // Store as JSON array
+    specifications Json // Store as JSON object
+    images         Json // Store as JSON array
+    tags           Json // Store as JSON array
+    createdAt      DateTime   @default(now())
+    updatedAt      DateTime   @updatedAt
+    CartItem       CartItem[]
 }
 
 model Cart {
-  id        String     @id @default(cuid())
-  userId    String?
-  items     CartItem[]
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+    id        String     @id @default(cuid())
+    userId    String?
+    items     CartItem[]
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
 }
 
 model CartItem {
-  id        String  @id @default(cuid())
-  cartId    String
-  productId String
-  quantity  Int
-  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
-  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+    id        String  @id @default(cuid())
+    cartId    String
+    productId String
+    quantity  Int
+    cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+    product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+    @@index([cartId])
+    @@index([productId])
 }
