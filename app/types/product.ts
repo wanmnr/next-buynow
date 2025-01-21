@@ -12,33 +12,24 @@
 //     isFeatured: boolean;
 //     stock: number;
 //   }
-  
+
 // types/product.ts
 export interface Product {
-  id: string
-  name: string
-  slug: string
-  description: string
-  price: number
-  stock: number
-  rating: number
-  reviews: number
-  features: string[]
-  specifications: ProductSpecifications
-  images: string[]
-  category: string
-  tags: string[]
-  createdAt: Date
-  updatedAt: Date
-}
-
-export interface ProductFilter {
-  category?: string
-  minPrice?: number
-  maxPrice?: number
-  inStock?: boolean
-  sortBy?: 'price' | 'rating' | 'newest'
-  sortOrder?: 'asc' | 'desc'
+  id: string;
+  name: string;
+  slug: string;
+  description: string;
+  price: number;
+  stock: number;
+  rating: number;
+  reviews: number;
+  features: string[];
+  specifications: ProductSpecifications;
+  images: string[];
+  category: string;
+  tags: string[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface ProductSpecifications {
@@ -49,4 +40,19 @@ export interface ProductSpecifications {
   warranty: string;
   battery?: string;
   display?: string;
+}
+
+// dictionary data structure
+// interface Specification {
+//   key: string;
+//   value: string | number | boolean;
+// }
+
+export interface ProductFilter {
+  category?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  inStock?: boolean;
+  sortBy?: "price" | "rating" | "newest";
+  sortOrder?: "asc" | "desc";
 }
