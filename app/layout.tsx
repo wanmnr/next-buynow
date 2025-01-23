@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./styles/globals.css";
 import { Inter } from "next/font/google";
 import ErrorBoundary from "./components/shared/ErrorBoundary";
+import { TransitionProvider } from "@/providers/TransitionProvider";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 
@@ -38,7 +39,9 @@ export default function RootLayout({
       >
         <Header />
         <main>
-          <ErrorBoundary>{children}</ErrorBoundary>
+          <ErrorBoundary>
+            <TransitionProvider>{children}</TransitionProvider>
+          </ErrorBoundary>
         </main>
         <Footer />
       </body>
