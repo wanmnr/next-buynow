@@ -1,25 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./styles/globals.css";
-import { Inter } from "next/font/google";
-import ErrorBoundary from "./components/shared/ErrorBoundary";
-import { TransitionProvider } from "@/providers/TransitionProvider";
-import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import ClientLayout from "./ClientLayout";
 
 export const metadata: Metadata = {
   title: "Top 10 Products - Premium Selection",
@@ -29,22 +11,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.className} antialiased`}
-      >
-        <Header />
-        <main>
-          <ErrorBoundary>
-            <TransitionProvider>{children}</TransitionProvider>
-          </ErrorBoundary>
-        </main>
-        <Footer />
-      </body>
+      <ClientLayout>{children}</ClientLayout>
     </html>
   );
 }
