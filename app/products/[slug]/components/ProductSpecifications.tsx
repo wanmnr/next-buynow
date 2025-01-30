@@ -1,6 +1,11 @@
 // components/products/ProductSpecifications.tsx
+
+interface ProductSpecifications {
+  [key: string]: string | number | boolean;
+}
+
 interface ProductSpecificationsProps {
-  readonly specifications: Record<string, string>;
+  readonly specifications: ProductSpecifications;
 }
 
 export default function ProductSpecifications({
@@ -13,7 +18,7 @@ export default function ProductSpecifications({
         {Object.entries(specifications).map(([key, value]) => (
           <div key={key} className="bg-gray-50 p-4 rounded-lg">
             <dt className="text-sm text-gray-600 mb-1">{key}</dt>
-            <dd className="font-medium">{value}</dd>
+            <dd className="font-medium">{String(value)}</dd>
           </div>
         ))}
       </div>
