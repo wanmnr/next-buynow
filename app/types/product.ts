@@ -1,19 +1,5 @@
 // types/product.ts
-// export interface Product {
-//     id: string;
-//     slug: string;
-//     name: string;
-//     description: string;
-//     price: number;
-//     images: string[];
-//     features: string[];
-//     specifications: Record<string, string>;
-//     category: string;
-//     isFeatured: boolean;
-//     stock: number;
-//   }
 
-// types/product.ts
 export interface Product {
   id: string;
   name: string;
