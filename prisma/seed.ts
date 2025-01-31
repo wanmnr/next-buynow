@@ -1,7 +1,7 @@
 // prisma/seed.ts
 
 import { PrismaClient } from "@prisma/client";
-import { products } from "@/data/products.json";
+import productData from "@/data/products.json";
 
 const prisma = new PrismaClient();
 
@@ -12,21 +12,12 @@ async function main() {
   await prisma.product.deleteMany();
 
   // Seed products
-  for (const product of products) {
+  for (const product of productData.products) {
     await prisma.product.create({
       data: {
-        id: product.id,
-        name: product.name,
-        slug: product.slug,
-        description: product.description,
-        price: product.price,
-        stock: product.stock,
-        rating: product.rating,
-        reviews: product.reviews,
-        category: product.category,
-        // Store arrays as JSON
+        ...product,
         features: JSON.stringify(product.features),
-        specifications: product.specifications, // Already an object
+        specifications: JSON.stringify(product.specifications),
         images: JSON.stringify(product.images),
         tags: JSON.stringify(product.tags),
         createdAt: new Date(product.createdAt),
