@@ -1,66 +1,70 @@
 {
   "products": [
     {
-      "id": "prod_001",
-      "slug": "premium-wireless-headphones",
-      "name": "Premium Wireless Headphones",
-      "description": "High-quality wireless headphones with noise cancellation technology",
-      "price": 299.99,
-      "category": "Electronics",
+      "id": "1",
+      "slug": "wireless-headphones",
+      "name": "Wireless Headphones",
+      "description": "High-quality wireless headphones with noise cancellation technology.",
+      "price": 199.99,
+      "category": "electronics",
       "features": [
         "Active Noise Cancellation",
-        "40-hour battery life",
-        "Premium sound quality",
-        "Comfortable fit"
+        "30-hour battery life",
+        "Bluetooth 5.0",
+        "Built-in microphone"
       ],
       "specifications": {
         "brand": "AudioTech",
         "model": "WH-2000",
         "connectivity": "Bluetooth 5.0",
         "weight": "250g",
-        "warranty": "2 years"
+        "warranty": "1 year",
+        "battery": "30 hours",
+        "display": "LED indicators"
       },
       "images": [
-        "/images/products/headphones-main.jpg",
-        "/images/products/headphones-angle.jpg",
-        "/images/products/headphones-case.jpg"
+        "/images/products/headphones-1.jpg",
+        "/images/products/headphones-2.jpg",
+        "/images/products/headphones-3.jpg"
       ],
       "stock": 50,
-      "rating": 4.8,
-      "reviews": 245,
-      "tags": ["headphones", "wireless", "audio", "electronics"],
+      "rating": 4.5,
+      "reviews": 128,
+      "tags": ["headphones", "wireless", "audio"],
       "createdAt": "2024-01-01T00:00:00.000Z",
       "updatedAt": "2024-01-01T00:00:00.000Z"
     },
     {
-      "id": "prod_002",
-      "slug": "smart-fitness-watch",
-      "name": "Smart Fitness Watch",
-      "description": "Advanced fitness tracking with health monitoring features",
-      "price": 199.99,
-      "category": "Electronics",
+      "id": "2",
+      "slug": "smart-watch",
+      "name": "Smart Watch",
+      "description": "Feature-packed smartwatch with health monitoring capabilities.",
+      "price": 299.99,
+      "category": "electronics",
       "features": [
         "Heart rate monitoring",
-        "Sleep tracking",
         "GPS tracking",
-        "Water resistant"
+        "Water resistant",
+        "Sleep tracking"
       ],
       "specifications": {
-        "brand": "FitTech",
-        "model": "FT-100",
+        "brand": "TechWatch",
+        "model": "SW-100",
+        "connectivity": "Bluetooth 5.0",
+        "weight": "45g",
+        "warranty": "2 years",
         "battery": "7 days",
-        "display": "AMOLED",
-        "warranty": "1 year"
+        "display": "1.4\" AMOLED"
       },
       "images": [
-        "/images/products/watch-main.jpg",
-        "/images/products/watch-side.jpg",
-        "/images/products/watch-band.jpg"
+        "/images/products/watch-1.jpg",
+        "/images/products/watch-2.jpg",
+        "/images/products/watch-3.jpg"
       ],
-      "stock": 75,
-      "rating": 4.6,
-      "reviews": 182,
-      "tags": ["smartwatch", "fitness", "wearable", "electronics"],
+      "stock": 30,
+      "rating": 4.7,
+      "reviews": 95,
+      "tags": ["smartwatch", "wearable", "fitness"],
       "createdAt": "2024-01-02T00:00:00.000Z",
       "updatedAt": "2024-01-02T00:00:00.000Z"
     }
